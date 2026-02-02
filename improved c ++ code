@@ -3,6 +3,7 @@ const int stepPin = 3;
 const int dirPin = 4; 
 const int stepPin2 = 5;
 const int dirPin2 = 6;
+const int grid_Motor = 7;
 
 const float WHEEL_DIAMETER = 88.0; // mm
 const float WHEEL_CIRCUMFERENCE = 3.14159 * WHEEL_DIAMETER; // ~276.46 mm
@@ -18,6 +19,7 @@ void setup() {
   pinMode(dirPin, OUTPUT);
   pinMode(stepPin2, OUTPUT); 
   pinMode(dirPin2, OUTPUT);
+  pinMode(grid_Motor, OUTPUT);
 }
 
 void move_distance_forward(float distance_mm) {
@@ -133,6 +135,18 @@ void turn_180_right() {
   }
   delay(100);
 }
+void Lower_grid (){
+digitalWrite(grid_Motor, HIGH);
+delay(100);
+digitalWrite(grid_Motor, LOW);
+}
+
+void Raise_grid (){
+digitalWrite(grid_Motor, HIGH);
+delay(100);
+digitalWrite(grid_Motor, LOW);
+}
+
 
 void loop() {
   move_distance_forward(100);
