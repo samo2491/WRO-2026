@@ -135,6 +135,6 @@ void turn_180_right() {
 }
 
 void loop() {
-  move_distance_forward();
+  move_distance_forward(100);
   delay(1000);
 }
